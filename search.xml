@@ -1,20 +1,453 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2021/08/27/hello-world/"/>
-      <url>/2021/08/27/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title>使用 Hexo 和 Github 搭建 Next 主题个人博客</title>
+    <url>/2021/08/27/hello-world/</url>
+    <content><![CDATA[<blockquote>
+<p>本文详细描述了如何在 Github 上，使用 Hexo 部署博客，并配置个性化 NexT 主题</p>
+</blockquote>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><ul>
+<li><a href="https://nodejs.org/en/">Node.js 官方下载地址</a></li>
+<li><a href="https://blog.csdn.net/qq_40593308/article/details/110559838">Node.js 安装教程</a></li>
+</ul>
+<br>
+
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><ul>
+<li><a href="https://git-scm.com/download">Git 官方下载地址</a></li>
+<li><a href="https://www.jianshu.com/p/414ccd423efc">Git 安装教程</a></li>
+</ul>
+<h3 id="注册-Github-账号"><a href="#注册-Github-账号" class="headerlink" title="注册 Github 账号"></a>注册 Github 账号</h3><ul>
+<li><a href="https://blog.csdn.net/yaorongke/article/details/119086305">教程</a></li>
+<li>输入用户名，Email，密码。比如，我的用户名是：lyfdnrjbrs</li>
+</ul>
+<h3 id="创建博客仓库"><a href="#创建博客仓库" class="headerlink" title="创建博客仓库"></a>创建博客仓库</h3><ul>
+<li><a href="https://blog.csdn.net/weixin_43729943/article/details/103915046">教程</a></li>
+<li>注意，仓库名应该为：<strong>用户名.github.io</strong>。比如，我的仓库名是：<a href="https://lyfdnrjbrs.github.io/"><strong>lyfdnrjbrs.github.io</strong></a></li>
+</ul>
+<h3 id="配置-SSH-Key"><a href="#配置-SSH-Key" class="headerlink" title="配置 SSH Key"></a>配置 SSH Key</h3><ul>
+<li><p>打开 Git Bash 终端</p>
+</li>
+<li><p>设置 user.name 和 user.email</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>生成 SSH Key</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>  此时，在用户文件夹下就会有一个新的文件夹 .ssh，里面有刚刚创建的ssh密钥文件 id_rsa 和 id_rsa.pub</p>
+</li>
+<li><p>获取 SSH Key</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>  如下图</p>
+  <img src="/images/getssh.png" style="margin: 0;">
+  <br></li>
+<li><p>在 GitHub 中添加 SSH Key</p>
+<ul>
+<li>打开 <a href="https://github.com/"><strong>GitHub</strong></a> 网站，点击头像，选择 <strong>Settings</strong><img src="/images/yhsettings.png" style="margin: 0;">
+<br></li>
+<li>选择 <strong>SSH and GPG keys</strong>，点击 <strong>New SSH key</strong><img src="/images/newsshkey.png" style="margin: 0;">
+<br></li>
+<li>将之前获取到的 id_rsa.pub 的内容复制粘贴到 <strong>Key</strong> 文本框中<img src="/images/addsshkey.png" style="margin: 0;">
+<br></li>
+</ul>
+</li>
+<li><p>测试是否成功配置 SSH Key</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line">//运行结果出现类似如下</span><br><span class="line">Hi lyfdnrjbrs! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+<p>  如下图</p>
+  <img src="/images/sshsuccessfully.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><ul>
+<li>安装 Hexo 的非常简单, 只要一条命令, 前提是安装好 Node.js 与 Git</li>
+<li>打开 Git Bash 终端，输入命令  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<br></li>
+</ul>
+<h1 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h1><h2 id="初始化-Hexo"><a href="#初始化-Hexo" class="headerlink" title="初始化 Hexo"></a>初始化 Hexo</h2><p>打开 Git Bash 终端，输入命令</p>
+<ul>
+<li><p>初始化博客文件夹（我的是在 D 盘创建的 blog，这里可能时间会长些，要耐心等待）</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init /d/blog</span><br></pre></td></tr></table></figure>
+
+<p>  如下图</p>
+  <img src="/images/cshblog.png" style="margin: 0;">
+  <br>
+
+<p>  初始化成功后生成的一些文件</p>
+  <img src="/images/cshwjj.png" style="margin: 0;">
+  <br></li>
+<li><p>切换到博客文件夹</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /d/blog</span><br></pre></td></tr></table></figure></li>
+<li><p>安装插件</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+<li><p>安装其它插件</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-admin --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-search --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<h2 id="本地浏览博客"><a href="#本地浏览博客" class="headerlink" title="本地浏览博客"></a>本地浏览博客</h2><p>第一次使用 hexo，建议先在本地创建服务器使用</p>
+<ul>
+<li><p>继续运行 Git Bash，输入命令</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//生成静态页面，可简写为 hexo g</span><br><span class="line">hexo generate</span><br><span class="line">//开启本地服务器，可简写为 hexo s</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>  运行成功后会发现提示信息：   </p>
+  <img src="/images/yxcg.png" style="margin: 0;">
+  <br>
+
+<p>  这里有<a href="https://www.jianshu.com/p/7b8faf77d1af"><strong>更多 hexo 常用命令</strong></a> </p>
+</li>
+<li><p>打开浏览器，地址栏中输入：<strong><a href="http://localhost:4000/">http://localhost:4000</a></strong>  ，可以看见刚刚创建的博客</p>
+<blockquote>
+<p>可能出现的问题：访问 <strong><a href="http://localhost:4000/">http://localhost:4000</a></strong>  无反应？</p>
+<blockquote>
+<p>解决方法：可能是由于端口问题引起的。使用 Ctrl+C 中断本地服务，使用命令 <code>hexo s -p 5000</code> 重新开启本地服务，访问 <strong><a href="http://localhost:5000/">http://localhost:5000</a></strong> 就可以看到博客页面了。</p>
+</blockquote>
+</blockquote>
+<p>  <strong>效果图</strong></p>
+  <img src="/images/cgym.png" style="margin: 0;"></li>
+</ul>
+<br>
+
+<h2 id="部署到Github上"><a href="#部署到Github上" class="headerlink" title="部署到Github上"></a>部署到Github上</h2><ul>
+<li>打开 blog 根目录下的 <strong>_config.yml</strong> 文件，拖动到底部找到 <strong>deploy</strong> 配置，按照以下格式修改并保存：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:lyfdnrjbrs/lyfdnrjbrs.github.io.git</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意：<strong>type: git</strong> 中的冒号后面有空格</li>
+<li>注意：将  repo: <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;">&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;</a>:<strong>lyfdnrjbrs/lyfdnrjbrs</strong>.github.io.git 中的用户名换成自己的用户名</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>打开 Git Bash 终端，输入命令</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//清空静态页面</span><br><span class="line">hexo clean</span><br><span class="line">//生成静态页面</span><br><span class="line">hexo generate</span><br><span class="line">//部署 </span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>  以上代码可以简写为</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//清除、生成、部署</span><br><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>注意：第一次发布会提示输入 Github 账号和密码，稍微等待一会，会提示发布成功</p>
+  <img src="/images/logingithub.png" style="margin: 0;">
+  <br></li>
+</ul>
+</li>
+<li><p>打开浏览器，地址栏中输入：<strong>http://你的用户名.github.io</strong>。如，我的博客地址是：<strong><a href="http://lyfdnrjbrs.github.io/">http://lyfdnrjbrs.github.io</a></strong></p>
+<br></li>
+</ul>
+<h1 id="NexT-主题"><a href="#NexT-主题" class="headerlink" title="NexT 主题"></a>NexT 主题</h1><h2 id="安装-NexT"><a href="#安装-NexT" class="headerlink" title="安装 NexT"></a>安装 NexT</h2><ul>
+<li><p>打开 Git Bash 终端，输入命令</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></li>
+<li><p>打开 blog 根目录下的 <strong>_config.yml</strong> 文件，拖动到底部找到 <strong>theme</strong> 配置，按照以下格式修改并保存：</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<h2 id="配置-NexT"><a href="#配置-NexT" class="headerlink" title="配置 NexT"></a>配置 NexT</h2><p>在 Hexo 中有两份主要的配置文件，其名称一样。为了描述方便，在以下说明中，分别用：</p>
+<blockquote>
+<p>站点配置文件 /blog/_config.yml<br>主题配置文件 /blog/themes/next/_config.yml</p>
+</blockquote>
+<p>区分两个配置文件</p>
+<h3 id="Site-设置"><a href="#Site-设置" class="headerlink" title="Site 设置"></a>Site 设置</h3><p>打开站点配置文件，找到 <code># Site</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>title: </code>标题<br><code>subtitle: </code>副标题<br><code>description: </code>简介<br><code>keywords: </code>关键词<br><code>author: </code>作者<br><code>language: </code>语言，zh-CN是简体中文，en是英语<br><code>timezone: </code>时区，默认本地时区</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 标题——了了的个人博客</span><br><span class="line">subtitle: 副标题——学习这件事，不是缺乏时间，而是缺乏努力。</span><br><span class="line">description: 简介——我们可以慢慢向前走，但绝对不能后退。</span><br><span class="line">keywords: lyf</span><br><span class="line">author: 作者——了了</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: &#x27;&#x27;</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/sitepz.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="翻页设置"><a href="#翻页设置" class="headerlink" title="翻页设置"></a>翻页设置</h3><p>打开站点配置文件，找到 <code># Home page setting</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>path: </code>博客索引页面的根路，默认值：””<br><code>per_page: </code>每页显示多少篇博客文章<br><code>order_by: </code>文章排序，默认按日期降序</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Home page setting</span><br><span class="line">index_generator:</span><br><span class="line">  path: &#x27;&#x27;</span><br><span class="line">  per_page: 10</span><br><span class="line">  order_by: -date</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="网站logo设置"><a href="#网站logo设置" class="headerlink" title="网站logo设置"></a>网站logo设置</h3><p>将喜欢的logo上传到此目录中 /blog/themes/next/source/images/ ，打开主题配置文件，找到 <code>favicon</code>，将值改为相应路径：</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: /images/flower-16x16.png</span><br><span class="line">  medium: /images/flower-32x32.png</span><br><span class="line">  #apple_touch_icon: /images/apple-touch-icon-next.png</span><br><span class="line">  #safari_pinned_tab: /images/logo.svg</span><br><span class="line">  #android_manifest: /images/manifest.json</span><br><span class="line">  #ms_browserconfig: /images/browserconfig.xml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>效果图</strong></p>
+<img src="/images/xgt-logo.png" style="margin: 0;"></li>
+</ul>
+<h3 id="页脚设置"><a href="#页脚设置" class="headerlink" title="页脚设置"></a>页脚设置</h3><p>打开站点配置文件，找到 <code>footer</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>since: </code>你博客开始的年份<br><code>icon:</code>设置图标，默认是一个小爱心<br><code>animated: </code>设置爱心的动画，默认<code>false</code> 是无效果，<code>true</code> 是跳动<br><code>color: </code>设置爱心的颜色，默认红色<br><code>copyright:</code>设置作者名字，默认为根目录下 _config.yml 中设置的作者名字<br><code>powered:  </code>设置最下面是否显示 Hexo 和 NexT 的版本，<code>true</code> 是显示，<code>false</code> 是不显示</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">footer:</span><br><span class="line">  since: 2021</span><br><span class="line">  icon:</span><br><span class="line">  name: fa fa-heart</span><br><span class="line">  animated: false</span><br><span class="line">  color: &quot;#ff0000&quot;</span><br><span class="line">  copyright:</span><br><span class="line">  powered: false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>效果图</strong></p>
+<img src="/images/xgt-foot.gif" style="margin: 0;">
+<br></li>
+</ul>
+<h3 id="版权所有者设置"><a href="#版权所有者设置" class="headerlink" title="版权所有者设置"></a>版权所有者设置</h3><p>打开站点配置文件，找到 <code>creative_commons</code>，按照以下说明修改并保存：</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: true</span><br><span class="line">  post: true</span><br><span class="line">  language:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>效果图</strong></p>
+<img src="/images/xgt-copy.png" style="margin: 0;">
+<br></li>
+</ul>
+<h3 id="Scheme-设置"><a href="#Scheme-设置" class="headerlink" title="Scheme 设置"></a>Scheme 设置</h3><p>打开主题配置文件，找到 <code># Scheme Settings</code>，将你需用启用的 scheme 前面注释 # 去除即可：</p>
+<blockquote>
+<p><code>scheme: </code>设置外观，<code>Muse</code> 默认值，是 NexT 最初的版本，黑白主调，大量留白，<code>Mist</code> Muse 的紧凑版，整洁有序的单栏外观，<code>Pisces</code> 双栏 Scheme，小家碧玉似的清新，<code>Gemini</code> 与 Pisces 类似，灰白分明，轮廓清晰</p>
+</blockquote>
+<blockquote>
+<p><code>darkmode</code> 是否启用黑暗模式，默认<code>false</code> 是不启用，<code>true</code> 是启用</p>
+</blockquote>
+<ul>
+<li><p><strong><code>scheme: Muse</code> 效果图</strong></p>
+  <img src="/images/scheme-muse.png" style="margin: 0;">
+  <br></li>
+<li><p><strong><code>scheme: Mist</code> 效果图</strong></p>
+  <img src="/images/scheme-mist.png" style="margin: 0;">
+  <br></li>
+<li><p><strong><code>scheme: Pisces</code> 效果图</strong></p>
+  <img src="/images/scheme-pisces.png" style="margin: 0;">
+  <br></li>
+<li><p><strong><code>scheme: Gemini</code> 效果图</strong></p>
+  <img src="/images/scheme-gemini.png" style="margin: 0;">
+  <br></li>
+<li><p><strong><code>darkmode: true</code> 效果图</strong></p>
+  <img src="/images/darkmode-true.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="菜单栏设置"><a href="#菜单栏设置" class="headerlink" title="菜单栏设置"></a>菜单栏设置</h3><p>打开主题配置文件，找到 <code># Menu Settings</code>，将你需用启用的 menu 前面注释 # 去除即可：：</p>
+<blockquote>
+<p><code>|| </code> 后的文字为菜单对应的图标，可以在<a href="https://fontawesome.com/v5.15/icons"><strong>这里</strong></a>找到需要的图标复制类名进行替换</p>
+</blockquote>
+<blockquote>
+<p><code>icons: </code>设置是否启用菜单栏图标，默认 <code>true</code> 是启用，<code>false</code> 是不启用<br><code>badges: </code>设置是否显示标签/分类/归档的类别和计数，默认 <code>false</code> 是不显示，<code>true</code> 是显示</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || fas fa-apple-alt</span><br><span class="line">  about: /about/ || fa fa-user</span><br><span class="line">  tags: /tags/ || fa fa-tags</span><br><span class="line">  categories: /categories/ || fa fa-th</span><br><span class="line">  archives: /archives/ || fa fa-archive</span><br><span class="line">  schedule: /schedule/ || fa fa-calendar</span><br><span class="line">  sitemap: /sitemap.xml || fa fa-sitemap</span><br><span class="line">  commonweal: /404/ || fa fa-heartbeat</span><br><span class="line">  search: /search/ || fa fa-search</span><br><span class="line">menu_settings:</span><br><span class="line">  icons: true</span><br><span class="line">  badges: true</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>图示：图标的类名</strong></p>
+  <img src="/images/fzicon.png" style="margin: 0;">
+  <br></li>
+</ul>
+<blockquote>
+<p>菜单对应的中文名称是在 /blog/themes/next/languages/zh-CN.yml 进行更改</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 归档</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  about: 关于</span><br><span class="line">  search: 搜索</span><br><span class="line">  schedule: 日程表</span><br><span class="line">  sitemap: 站点地图</span><br><span class="line">  commonweal: 公益 404</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-menu.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="侧边栏设置"><a href="#侧边栏设置" class="headerlink" title="侧边栏设置"></a>侧边栏设置</h3><p>打开站点配置文件，找到 <code># Sidebar Settings</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>position: </code>  设置侧边栏的位置，默认 <code>left</code> 是位于左侧，<code>right</code> 是位于右侧<br><code>width: </code>设置侧边栏宽度，默认即可<br><code>display: </code>设置侧边栏显示的时机，默认 <code>post</code> 是在文章页面（拥有目录列表）时显示，<code>always</code> 是在所有页面中都显示，<code>hide</code> 是在所有页面中都隐藏（可以手动展开），<code>remove</code> 是完全移除</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  position: right</span><br><span class="line">  #width: 300</span><br><span class="line">  display: post</span><br><span class="line">  padding: 18</span><br><span class="line">  offset: 12</span><br><span class="line">  onmobile: false</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-right1.png" style="margin: 0;">
+  <br>
+  <img src="/images/xgt-right2.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h3><p>将喜欢的头像图片上传到此目录中 /blog/themes/next/source/images/ ，打开主题配置文件，找到 <code># Sidebar Avatar</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>url: </code>设置头像的路径<br><code>rounded: </code>设置头像是否以圆形展示，默认 <code>false</code> 是正方形，<code>true</code> 是圆形<br><code>rotated: </code>设置鼠标放在头像上的时候是否旋转，默认 <code>false</code> 是不旋转，<code>true</code> 是旋转</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Sidebar Avatar</span><br><span class="line">avatar:</span><br><span class="line">  url: /images/Kitty 1.ico</span><br><span class="line">  rounded: false</span><br><span class="line">  rotated: true</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-tx.gif" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="侧边栏站点状态设置"><a href="#侧边栏站点状态设置" class="headerlink" title="侧边栏站点状态设置"></a>侧边栏站点状态设置</h3><p>打开站点配置文件，找到 <code>site_state</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>site_state: </code>  设置侧边栏是否显示帖子/类别/标签的类别和计数，默认 <code>true</code> 是显示，<code>false</code> 是不显示</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">site_state: true</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-zd.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="社交链接设置"><a href="#社交链接设置" class="headerlink" title="社交链接设置"></a>社交链接设置</h3><p>打开站点配置文件，找到 <code># Social Links</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>social: </code> 需要什么把相应的注释去掉即可，还可以加上自己的链接（格式：名称: 链接地址 || 图标名称），或者将它原来的名字修改为你要的。</p>
+</blockquote>
+<blockquote>
+<p><code>enable: </code>设置图标是否启用，默认 <code>true</code> 是启用，<code>false</code> 是不启用<br><code>icons_only: </code>设置是否只显示图标，默认 <code>false</code> 是显示图标+文字，<code>true</code> 是只显示图标<br><code>transition: </code>是否显示具有转换效果的社交链接图标，默认 <code>false</code> 是不显示，<code>true</code> 是显示</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https://github.com/lyfdnrjbrs || fab fa-github</span><br><span class="line">  E-Mail: mailto:lyfdnrjbrs@sina.com || fa fa-envelope</span><br><span class="line">  Weibo: https://weibo.com/6239510525 || fab fa-weibo</span><br><span class="line">  CSDN: https://blog.csdn.net/m0_50646138 || fab fa-cuttlefish</span><br><span class="line">  bilibili: https://space.bilibili.com/202736948 || fas fa-tv</span><br><span class="line">social_icons:</span><br><span class="line">  enable: false</span><br><span class="line">  icons_only: false</span><br><span class="line">  transition: false</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-social.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="友情链接设置"><a href="#友情链接设置" class="headerlink" title="友情链接设置"></a>友情链接设置</h3><p>打开站点配置文件，找到 <code># Blog rolls</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>icon: </code>设置图标<br><code>title: </code>设置名称<br><code>layout:</code>设置链接以什么样式显示，默认 <code>block</code> 是以块显示，<code>inline</code> 是内联显示</p>
+</blockquote>
+<blockquote>
+<p><code>links: </code>设置你的友情链接（格式：名称: 链接地址）</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">links_settings:</span><br><span class="line">  icon: fa fa-link</span><br><span class="line">  title: 友情链接</span><br><span class="line">  layout: inline</span><br><span class="line">links:</span><br><span class="line">  友链1: http://yoursite1.com</span><br><span class="line">  友链2: http://yoursite2.com</span><br><span class="line">  友链3: http://yoursite3.com</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-links.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="文章目录设置"><a href="#文章目录设置" class="headerlink" title="文章目录设置"></a>文章目录设置</h3><p>打开站点配置文件，找到 <code>toc</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>enable: </code> 是否启用侧边栏文章目录，默认 <code>true</code> 是启用，<code>false</code> 是不启用<br><code>number: </code>设置是否自动将列表编号，默认 <code>true</code> 是自动编号，<code>false</code> 是不自动编号<br><code>wrap: </code>设置是否换行，默认 <code>false</code> 是不换行，超过长度显示为…，<code>true</code> 是超过长度自动换行<br><code>expand_all: </code>设置是否显示帖子中的所有级别，默认 <code>false</code> 是不显示全部级别，只显示激活部分，<code>true</code> 是将显示帖子中的所有级别<br><code>max_depth: </code>设置目录的最大深度</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">toc:</span><br><span class="line">  enable: true</span><br><span class="line">  number: true</span><br><span class="line">  wrap: false</span><br><span class="line">  expand_all: false</span><br><span class="line">  max_depth: 6</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-toc.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="序言文本设置"><a href="#序言文本设置" class="headerlink" title="序言文本设置"></a>序言文本设置</h3><p>打开站点配置文件，找到 <code># Post Settings</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>item_text: </code> 是否在序言中显示描述文本，默认 <code>true</code> 是显示，<code>false</code> 是不显示<br><code>created_at: </code>是否在序言中显示帖子创建日期，默认 <code>true</code> 是显示，<code>false</code> 是不显示<br><code>updated_at: </code>的 <code>enable: </code>是否在序言中显示帖子更新日期，默认 <code>true</code> 是显示，<code>false</code> 是不显示，<code>another_day:</code> 如果更新/编辑的日期与创建日期不同，是否还显示编辑的日期，默认 <code>true</code> 是显示，<code>false</code> 是不显示<br><code>categories: </code>是否在序言中显示分类，默认 <code>false</code> 是不显示全部级别，只显示激活部分，<code>true</code> 是将显示帖子中的所有级别</p>
+</blockquote>
+<blockquote>
+<p><code>separated_meta: </code> 是否在序言和脚部部分中显示本文字数和阅读时长，默认 <code>true</code> 是显示，<code>false</code> 是不显示<br><code>item_text_post: </code>是否在序言中显示本文字数和阅读时长的文本描述，默认 <code>true</code> 是显示，<code>false</code> 是不显示<br><code>item_text_total: </code>的 <code>enable: </code>是否在脚部部分中显示本文字数和阅读时长的文本描述，默认 <code>false</code> 是不显示，<code>true</code> 是显示</p>
+<blockquote>
+<p>注意：要提前在站点根目录执行以下命令进行安装：<br>    <strong>示例</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-word-counter</span><br></pre></td></tr></table></figure><br><code>tag_icon: </code>默认情况下，帖子底部的标签在左侧有一个符号 # ，设置是否启用图标代替符号，默认 <code>false</code> 是不显示，<code>true</code> 是显示</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">post_meta:</span><br><span class="line">  item_text: true</span><br><span class="line">  created_at: true</span><br><span class="line">  updated_at:</span><br><span class="line">    enable: true</span><br><span class="line">    another_day: true</span><br><span class="line">  categories: true</span><br><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true</span><br><span class="line">  item_text_post: true</span><br><span class="line">  item_text_total: true</span><br><span class="line">tag_icon: false</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-xy1.png" style="margin: 0;">
+  <br>
+  <img src="/images/xgt-xy2.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="打赏设置"><a href="#打赏设置" class="headerlink" title="打赏设置"></a>打赏设置</h3><p>打开站点配置文件，找到 <code># Reward (Donate)</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>enable: </code> 是否启用打赏，默认 <code>true</code> 是启用，<code>false</code> 是不启用<br><code>animation: </code>设置鼠标移入是否旋转，默认 <code>false</code> 是不旋转，<code>true</code> 是旋转<br><code>comment: </code>设置打赏按钮上方的文本描述</p>
+</blockquote>
+<blockquote>
+<p><code>reward: </code>设置打赏的微信 / 支付宝 的收款码（格式：名称: 图片地址）</p>
+<blockquote>
+<p>注意：图片上传到此目录中 /blog/themes/next/source/images/</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">reward_settings:</span><br><span class="line">  enable: true</span><br><span class="line">  animation: false</span><br><span class="line">  comment: 坚持原创技术分享，您的支持将鼓励我继续创作！</span><br><span class="line">reward:</span><br><span class="line">  wechatpay: /images/wechatpay.png</span><br><span class="line">  alipay: /images/alipay.png</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-reward.gif" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="其他发布渠道设置"><a href="#其他发布渠道设置" class="headerlink" title="其他发布渠道设置"></a>其他发布渠道设置</h3><p>打开站点配置文件，找到 <code>follow_me</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>follow_me: </code> 需要什么把相应的注释去掉即可，还可以加上其他发布渠道（格式：名称: 链接地址 || 图标名称），或者将它原来的名字修改为你要的。</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">follow_me:</span><br><span class="line">  #Twitter: https://twitter.com/username || fab fa-twitter</span><br><span class="line">  #Telegram: https://t.me/channel_name || fab fa-telegram</span><br><span class="line">  WeChat: /images/wechat_channel.jpg || fab fa-weixin</span><br><span class="line">  RSS: /atom.xml || fa fa-rss</span><br><span class="line">  CSDN: https://blog.csdn.net/m0_50646138 || fab fa-cuttlefish</span><br><span class="line">  bilibili: https://space.bilibili.com/202736948 || fas fa-tv</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-follow.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="代码块设置"><a href="#代码块设置" class="headerlink" title="代码块设置"></a>代码块设置</h3><p>打开站点配置文件，找到 <code>codeblock</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>highlight_theme: </code>设置代码块样式，值选项：<code>normal</code> | <code>night</code> | <code>night eighties</code> | <code>night blue</code> | <code>night bright</code> | <code>solarized</code> | <code>solarized dark</code> | <code>galactic</code></p>
+</blockquote>
+<blockquote>
+<p><code>enable: </code> 是否启用代码块的复制和粘贴功能，默认 <code>false</code> 是不启用，<code>true</code> 是启用<br><code>show_result: </code>是否显示复制和粘贴功能的复制结果，默认 <code>false</code> 是不显示，<code>true</code> 是显示<br><code>style: </code>更改复制按钮样式，值选项：<code>default</code> | <code>flat</code> | <code>mac</code></p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  highlight_theme: night</span><br><span class="line">  copy_button:</span><br><span class="line">    enable: true</span><br><span class="line">    show_result: true</span><br><span class="line">    style: default</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-codeblock.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="回到顶部设置"><a href="#回到顶部设置" class="headerlink" title="回到顶部设置"></a>回到顶部设置</h3><p>打开站点配置文件，找到 <code>back2top</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>enable: </code> 是否启用回到顶部功能，默认 <code>true</code> 是启用，<code>false</code> 是不启用<br><code>sidebar: </code>是否将按钮放在侧边栏中，默认 <code>false</code> 是将按钮放在侧边栏图标下，<code>true</code> 是将按钮放在侧边栏中<br><code>scrollpercent: </code>按钮是否显示滚动百分比标签，默认 <code>false</code> 是不显示，<code>true</code> 是显示</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">back2top:</span><br><span class="line">  enable: true</span><br><span class="line">  sidebar: false</span><br><span class="line">  scrollpercent: true</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-back2top.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="阅读进度条设置"><a href="#阅读进度条设置" class="headerlink" title="阅读进度条设置"></a>阅读进度条设置</h3><p>打开站点配置文件，找到 <code># Reading progress bar</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>enable: </code> 是否启用阅读进度条功能，默认 <code>false</code> 是不启用，<code>true</code> 是启用<br><code>position: </code>阅读进度条的位置，默认 <code>top</code> 位于顶部，<code>bottom</code> 位于底部<br><code>color: </code>阅读进度条的颜色，默认 <code>#37c6c0</code><br><code>height: </code>阅读进度条的高度，默认 <code>3px</code> </p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Reading progress bar</span><br><span class="line">reading_progress:</span><br><span class="line">  enable: true</span><br><span class="line">  position: bottom</span><br><span class="line">  color: &quot;red&quot;</span><br><span class="line">  height: 5px</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-read.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="书签设置"><a href="#书签设置" class="headerlink" title="书签设置"></a>书签设置</h3><p>打开站点配置文件，找到 <code># Bookmark Support</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>enable: </code> 是否启用允许用户保存他们的阅读进度，默认 <code>false</code> 是不允许，<code>true</code> 是允许<br><code>color: </code>书签的颜色，默认 <code>#222</code><br><code>save: </code>保存的方式，默认 <code>auto</code> </p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Bookmark Support</span><br><span class="line">bookmark:</span><br><span class="line">  enable: true</span><br><span class="line">  color: &quot;#222&quot;</span><br><span class="line">  save: auto</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-bookmark.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="横幅设置"><a href="#横幅设置" class="headerlink" title="横幅设置"></a>横幅设置</h3><p>打开站点配置文件，找到 <code>github_banner</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>enable: </code> 是否在右上角提供横幅，默认 <code>false</code> 是不提供，<code>true</code> 是提供<br><code>permalink: </code>设置自己的 GitHub 链接，默认 <code>https://github.com/yourname</code><br><code>title: </code>设置标题，默认 <code>Follow me on GitHub</code> </p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">github_banner:</span><br><span class="line">  enable: true</span><br><span class="line">  permalink: https://github.com/lyfdnrjbrs</span><br><span class="line">  title: Follow me on GitHub</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-banner.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="字体自定义设置"><a href="#字体自定义设置" class="headerlink" title="字体自定义设置"></a>字体自定义设置</h3><p>打开站点配置文件，找到 <code>font</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>global: </code> 设置全局字体，整个网站使用的字体。<br><code>title: </code> 设置标题字体，站点标题使用的字体。<br><code>headings</code>  设置标题字体，文章标题使用的字体（h1、h2、h3、h4、h5、h6）。<br><code>pposts : </code>设置文章字体，文章使用的字体。<br><code>codes: </code>设置代码字体，文章中代码块使用的字体。</p>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">font:</span><br><span class="line">  enable: true</span><br><span class="line">  host:</span><br><span class="line"></span><br><span class="line">  # Global font settings used for all elements inside &lt;body&gt;.</span><br><span class="line">  global:</span><br><span class="line">    external: true</span><br><span class="line">    family: Monda</span><br><span class="line">    size: 1.125</span><br><span class="line"></span><br><span class="line">  # Font settings for site title (.site-title).</span><br><span class="line">  title:</span><br><span class="line">    external: true</span><br><span class="line">    family: Lobster Two</span><br><span class="line">    size:</span><br><span class="line"></span><br><span class="line">  # Font settings for headlines (&lt;h1&gt; to &lt;h6&gt;).</span><br><span class="line">  headings:</span><br><span class="line">    external: true</span><br><span class="line">    family: Amita</span><br><span class="line">    size:</span><br><span class="line"></span><br><span class="line">  # Font settings for posts (.post-body).</span><br><span class="line">  posts:</span><br><span class="line">    external: true</span><br><span class="line">    family: Montserrat</span><br><span class="line"></span><br><span class="line">  # Font settings for &lt;code&gt; and code blocks.</span><br><span class="line">  codes:</span><br><span class="line">    external: true</span><br><span class="line">    family: PT Mono</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-font.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="本地搜索设置"><a href="#本地搜索设置" class="headerlink" title="本地搜索设置"></a>本地搜索设置</h3><p>打开站点配置文件，找到 <code># Local Search</code>，按照以下说明修改并保存：</p>
+<blockquote>
+<p><code>enable: </code> 设置是否启用本地搜索功能，默认 <code>false</code> 是不启用，<code>true</code> 是启用</p>
+<blockquote>
+<p>注意：要提前在站点根目录执行以下命令进行安装：<br>    <strong>示例</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true </span><br><span class="line">  trigger: auto</span><br><span class="line">  top_n_per_article: 1</span><br><span class="line">  unescape: false</span><br><span class="line">  preload: false</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>效果图</strong></p>
+  <img src="/images/xgt-search1.png" style="margin: 0;">
+  <br>
+  <img src="/images/xgt-search2.png" style="margin: 0;">
+  <br></li>
+</ul>
+<h3 id="站点背景设置"><a href="#站点背景设置" class="headerlink" title="站点背景设置"></a>站点背景设置</h3><ul>
+<li><a href="https://blog.csdn.net/qq_32767041/article/details/103284412">教程</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
 </search>
