@@ -106,7 +106,7 @@
 <li>打开 blog 根目录下的 <strong>_config.yml</strong> 文件，拖动到底部找到 <strong>deploy</strong> 配置，按照以下格式修改并保存：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:lyfdnrjbrs/lyfdnrjbrs.github.io.git</span><br></pre></td></tr></table></figure>
 <ul>
 <li>注意：<strong>type: git</strong> 中的冒号后面有空格</li>
-<li>注意：将  repo: <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;">&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;</a>:<strong>lyfdnrjbrs/lyfdnrjbrs</strong>.github.io.git 中的用户名换成自己的用户名</li>
+<li>注意：将  repo: <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;</a>:<strong>lyfdnrjbrs/lyfdnrjbrs</strong>.github.io.git 中的用户名换成自己的用户名</li>
 </ul>
 </li>
 </ul>
