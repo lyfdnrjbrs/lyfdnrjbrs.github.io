@@ -65,8 +65,10 @@
 <meta property="og:image" content="http://example.com/images/xgt-font.png">
 <meta property="og:image" content="http://example.com/images/xgt-search1.png">
 <meta property="og:image" content="http://example.com/images/xgt-search2.png">
+<meta property="og:image" content="http://example.com/images/xgt-search1.png">
+<meta property="og:image" content="http://example.com/images/xgt-search2.png">
 <meta property="article:published_time" content="2021-08-27T01:58:18.536Z">
-<meta property="article:modified_time" content="2021-08-31T05:35:40.502Z">
+<meta property="article:modified_time" content="2021-08-31T06:59:04.670Z">
 <meta property="article:author" content="了了">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Github">
@@ -86,6 +88,7 @@
     lang   : 'zh-CN'
   };
 </script>
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 
   <title>使用 Hexo 和 Github 搭建 Next 主题个人博客 | lyfdnrjbrs</title>
   
@@ -250,7 +253,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Kitty%201.ico">
       <meta itemprop="name" content="了了">
-      <meta itemprop="description" content="我们可以慢慢向前走，但绝对不能后退。">
+      <meta itemprop="description" content="拽而有礼，拽而不狂">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -275,7 +278,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-31 13:35:40" itemprop="dateModified" datetime="2021-08-31T13:35:40+08:00">2021-08-31</time>
+                <time title="修改时间：2021-08-31 14:59:04" itemprop="dateModified" datetime="2021-08-31T14:59:04+08:00">2021-08-31</time>
               </span>
 
           <br>
@@ -284,14 +287,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>10k</span>
+              <span>11k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
+              <span>10 分钟</span>
             </span>
 
         </div>
@@ -406,7 +409,7 @@
 <li>打开 blog 根目录下的 <strong>_config.yml</strong> 文件，拖动到底部找到 <strong>deploy</strong> 配置，按照以下格式修改并保存：  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:lyfdnrjbrs/lyfdnrjbrs.github.io.git</span><br></pre></td></tr></table></figure>
 <ul>
 <li>注意：<strong>type: git</strong> 中的冒号后面有空格</li>
-<li>注意：将  repo: <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;</a>:<strong>lyfdnrjbrs/lyfdnrjbrs</strong>.github.io.git 中的用户名换成自己的用户名</li>
+<li>注意：将  repo: <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;</a>:<strong>lyfdnrjbrs/lyfdnrjbrs</strong>.github.io.git 中的用户名换成自己的用户名</li>
 </ul>
 </li>
 </ul>
@@ -465,7 +468,7 @@
 <li><p><strong>效果图</strong></p>
 <img src="/images/xgt-logo.png" style="margin: 0;"></li>
 </ul>
-<h3 id="页脚设置"><a href="#页脚设置" class="headerlink" title="页脚设置"></a>页脚设置</h3><p>打开站点配置文件，找到 <code>footer</code>，按照以下说明修改并保存：</p>
+<h3 id="页脚设置"><a href="#页脚设置" class="headerlink" title="页脚设置"></a>页脚设置</h3><p>打开主题配置文件，找到 <code>footer</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>since: </code>你博客开始的年份<br><code>icon:</code>设置图标，默认是一个小爱心<br><code>animated: </code>设置爱心的动画，默认<code>false</code> 是无效果，<code>true</code> 是跳动<br><code>color: </code>设置爱心的颜色，默认红色<br><code>copyright:</code>设置作者名字，默认为根目录下 _config.yml 中设置的作者名字<br><code>powered:  </code>设置最下面是否显示 Hexo 和 NexT 的版本，<code>true</code> 是显示，<code>false</code> 是不显示</p>
 </blockquote>
@@ -477,7 +480,7 @@
 <img src="/images/xgt-foot.gif" style="margin: 0;">
 <br></li>
 </ul>
-<h3 id="版权所有者设置"><a href="#版权所有者设置" class="headerlink" title="版权所有者设置"></a>版权所有者设置</h3><p>打开站点配置文件，找到 <code>creative_commons</code>，按照以下说明修改并保存：</p>
+<h3 id="版权所有者设置"><a href="#版权所有者设置" class="headerlink" title="版权所有者设置"></a>版权所有者设置</h3><p>打开主题配置文件，找到 <code>creative_commons</code>，按照以下说明修改并保存：</p>
 <ul>
 <li><p><strong>示例</strong></p>
   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: true</span><br><span class="line">  post: true</span><br><span class="line">  language:</span><br></pre></td></tr></table></figure>
@@ -534,7 +537,7 @@
   <img src="/images/xgt-menu.png" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="侧边栏设置"><a href="#侧边栏设置" class="headerlink" title="侧边栏设置"></a>侧边栏设置</h3><p>打开站点配置文件，找到 <code># Sidebar Settings</code>，按照以下说明修改并保存：</p>
+<h3 id="侧边栏设置"><a href="#侧边栏设置" class="headerlink" title="侧边栏设置"></a>侧边栏设置</h3><p>打开主题配置文件，找到 <code># Sidebar Settings</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>position: </code>  设置侧边栏的位置，默认 <code>left</code> 是位于左侧，<code>right</code> 是位于右侧<br><code>width: </code>设置侧边栏宽度，默认即可<br><code>display: </code>设置侧边栏显示的时机，默认 <code>post</code> 是在文章页面（拥有目录列表）时显示，<code>always</code> 是在所有页面中都显示，<code>hide</code> 是在所有页面中都隐藏（可以手动展开），<code>remove</code> 是完全移除</p>
 </blockquote>
@@ -558,7 +561,7 @@
   <img src="/images/xgt-tx.gif" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="侧边栏站点状态设置"><a href="#侧边栏站点状态设置" class="headerlink" title="侧边栏站点状态设置"></a>侧边栏站点状态设置</h3><p>打开站点配置文件，找到 <code>site_state</code>，按照以下说明修改并保存：</p>
+<h3 id="侧边栏站点状态设置"><a href="#侧边栏站点状态设置" class="headerlink" title="侧边栏站点状态设置"></a>侧边栏站点状态设置</h3><p>打开主题配置文件，找到 <code>site_state</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>site_state: </code>  设置侧边栏是否显示帖子/类别/标签的类别和计数，默认 <code>true</code> 是显示，<code>false</code> 是不显示</p>
 </blockquote>
@@ -569,7 +572,7 @@
   <img src="/images/xgt-zd.png" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="社交链接设置"><a href="#社交链接设置" class="headerlink" title="社交链接设置"></a>社交链接设置</h3><p>打开站点配置文件，找到 <code># Social Links</code>，按照以下说明修改并保存：</p>
+<h3 id="社交链接设置"><a href="#社交链接设置" class="headerlink" title="社交链接设置"></a>社交链接设置</h3><p>打开主题配置文件，找到 <code># Social Links</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>social: </code> 需要什么把相应的注释去掉即可，还可以加上自己的链接（格式：名称: 链接地址 || 图标名称），或者将它原来的名字修改为你要的。</p>
 </blockquote>
@@ -583,7 +586,7 @@
   <img src="/images/xgt-social.png" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="友情链接设置"><a href="#友情链接设置" class="headerlink" title="友情链接设置"></a>友情链接设置</h3><p>打开站点配置文件，找到 <code># Blog rolls</code>，按照以下说明修改并保存：</p>
+<h3 id="友情链接设置"><a href="#友情链接设置" class="headerlink" title="友情链接设置"></a>友情链接设置</h3><p>打开主题配置文件，找到 <code># Blog rolls</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>icon: </code>设置图标<br><code>title: </code>设置名称<br><code>layout:</code>设置链接以什么样式显示，默认 <code>block</code> 是以块显示，<code>inline</code> 是内联显示</p>
 </blockquote>
@@ -597,7 +600,7 @@
   <img src="/images/xgt-links.png" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="文章目录设置"><a href="#文章目录设置" class="headerlink" title="文章目录设置"></a>文章目录设置</h3><p>打开站点配置文件，找到 <code>toc</code>，按照以下说明修改并保存：</p>
+<h3 id="文章目录设置"><a href="#文章目录设置" class="headerlink" title="文章目录设置"></a>文章目录设置</h3><p>打开主题配置文件，找到 <code>toc</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>enable: </code> 是否启用侧边栏文章目录，默认 <code>true</code> 是启用，<code>false</code> 是不启用<br><code>number: </code>设置是否自动将列表编号，默认 <code>true</code> 是自动编号，<code>false</code> 是不自动编号<br><code>wrap: </code>设置是否换行，默认 <code>false</code> 是不换行，超过长度显示为…，<code>true</code> 是超过长度自动换行<br><code>expand_all: </code>设置是否显示帖子中的所有级别，默认 <code>false</code> 是不显示全部级别，只显示激活部分，<code>true</code> 是将显示帖子中的所有级别<br><code>max_depth: </code>设置目录的最大深度</p>
 </blockquote>
@@ -608,7 +611,7 @@
   <img src="/images/xgt-toc.png" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="序言文本设置"><a href="#序言文本设置" class="headerlink" title="序言文本设置"></a>序言文本设置</h3><p>打开站点配置文件，找到 <code># Post Settings</code>，按照以下说明修改并保存：</p>
+<h3 id="序言文本设置"><a href="#序言文本设置" class="headerlink" title="序言文本设置"></a>序言文本设置</h3><p>打开主题配置文件，找到 <code># Post Settings</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>item_text: </code> 是否在序言中显示描述文本，默认 <code>true</code> 是显示，<code>false</code> 是不显示<br><code>created_at: </code>是否在序言中显示帖子创建日期，默认 <code>true</code> 是显示，<code>false</code> 是不显示<br><code>updated_at: </code>的 <code>enable: </code>是否在序言中显示帖子更新日期，默认 <code>true</code> 是显示，<code>false</code> 是不显示，<code>another_day:</code> 如果更新/编辑的日期与创建日期不同，是否还显示编辑的日期，默认 <code>true</code> 是显示，<code>false</code> 是不显示<br><code>categories: </code>是否在序言中显示分类，默认 <code>false</code> 是不显示全部级别，只显示激活部分，<code>true</code> 是将显示帖子中的所有级别</p>
 </blockquote>
@@ -627,7 +630,7 @@
   <img src="/images/xgt-xy2.png" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="打赏设置"><a href="#打赏设置" class="headerlink" title="打赏设置"></a>打赏设置</h3><p>打开站点配置文件，找到 <code># Reward (Donate)</code>，按照以下说明修改并保存：</p>
+<h3 id="打赏设置"><a href="#打赏设置" class="headerlink" title="打赏设置"></a>打赏设置</h3><p>打开主题配置文件，找到 <code># Reward (Donate)</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>enable: </code> 是否启用打赏，默认 <code>true</code> 是启用，<code>false</code> 是不启用<br><code>animation: </code>设置鼠标移入是否旋转，默认 <code>false</code> 是不旋转，<code>true</code> 是旋转<br><code>comment: </code>设置打赏按钮上方的文本描述</p>
 </blockquote>
@@ -644,7 +647,7 @@
   <img src="/images/xgt-reward.gif" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="其他发布渠道设置"><a href="#其他发布渠道设置" class="headerlink" title="其他发布渠道设置"></a>其他发布渠道设置</h3><p>打开站点配置文件，找到 <code>follow_me</code>，按照以下说明修改并保存：</p>
+<h3 id="其他发布渠道设置"><a href="#其他发布渠道设置" class="headerlink" title="其他发布渠道设置"></a>其他发布渠道设置</h3><p>打开主题配置文件，找到 <code>follow_me</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>follow_me: </code> 需要什么把相应的注释去掉即可，还可以加上其他发布渠道（格式：名称: 链接地址 || 图标名称），或者将它原来的名字修改为你要的。</p>
 </blockquote>
@@ -655,7 +658,7 @@
   <img src="/images/xgt-follow.png" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="代码块设置"><a href="#代码块设置" class="headerlink" title="代码块设置"></a>代码块设置</h3><p>打开站点配置文件，找到 <code>codeblock</code>，按照以下说明修改并保存：</p>
+<h3 id="代码块设置"><a href="#代码块设置" class="headerlink" title="代码块设置"></a>代码块设置</h3><p>打开主题配置文件，找到 <code>codeblock</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>highlight_theme: </code>设置代码块样式，值选项：<code>normal</code> | <code>night</code> | <code>night eighties</code> | <code>night blue</code> | <code>night bright</code> | <code>solarized</code> | <code>solarized dark</code> | <code>galactic</code></p>
 </blockquote>
@@ -669,7 +672,7 @@
   <img src="/images/xgt-codeblock.png" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="回到顶部设置"><a href="#回到顶部设置" class="headerlink" title="回到顶部设置"></a>回到顶部设置</h3><p>打开站点配置文件，找到 <code>back2top</code>，按照以下说明修改并保存：</p>
+<h3 id="回到顶部设置"><a href="#回到顶部设置" class="headerlink" title="回到顶部设置"></a>回到顶部设置</h3><p>打开主题配置文件，找到 <code>back2top</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>enable: </code> 是否启用回到顶部功能，默认 <code>true</code> 是启用，<code>false</code> 是不启用<br><code>sidebar: </code>是否将按钮放在侧边栏中，默认 <code>false</code> 是将按钮放在侧边栏图标下，<code>true</code> 是将按钮放在侧边栏中<br><code>scrollpercent: </code>按钮是否显示滚动百分比标签，默认 <code>false</code> 是不显示，<code>true</code> 是显示</p>
 </blockquote>
@@ -680,7 +683,7 @@
   <img src="/images/xgt-back2top.png" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="阅读进度条设置"><a href="#阅读进度条设置" class="headerlink" title="阅读进度条设置"></a>阅读进度条设置</h3><p>打开站点配置文件，找到 <code># Reading progress bar</code>，按照以下说明修改并保存：</p>
+<h3 id="阅读进度条设置"><a href="#阅读进度条设置" class="headerlink" title="阅读进度条设置"></a>阅读进度条设置</h3><p>打开主题配置文件，找到 <code># Reading progress bar</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>enable: </code> 是否启用阅读进度条功能，默认 <code>false</code> 是不启用，<code>true</code> 是启用<br><code>position: </code>阅读进度条的位置，默认 <code>top</code> 位于顶部，<code>bottom</code> 位于底部<br><code>color: </code>阅读进度条的颜色，默认 <code>#37c6c0</code><br><code>height: </code>阅读进度条的高度，默认 <code>3px</code> </p>
 </blockquote>
@@ -691,7 +694,7 @@
   <img src="/images/xgt-read.png" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="书签设置"><a href="#书签设置" class="headerlink" title="书签设置"></a>书签设置</h3><p>打开站点配置文件，找到 <code># Bookmark Support</code>，按照以下说明修改并保存：</p>
+<h3 id="书签设置"><a href="#书签设置" class="headerlink" title="书签设置"></a>书签设置</h3><p>打开主题配置文件，找到 <code># Bookmark Support</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>enable: </code> 是否启用允许用户保存他们的阅读进度，默认 <code>false</code> 是不允许，<code>true</code> 是允许<br><code>color: </code>书签的颜色，默认 <code>#222</code><br><code>save: </code>保存的方式，默认 <code>auto</code> </p>
 </blockquote>
@@ -702,7 +705,7 @@
   <img src="/images/xgt-bookmark.png" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="横幅设置"><a href="#横幅设置" class="headerlink" title="横幅设置"></a>横幅设置</h3><p>打开站点配置文件，找到 <code>github_banner</code>，按照以下说明修改并保存：</p>
+<h3 id="横幅设置"><a href="#横幅设置" class="headerlink" title="横幅设置"></a>横幅设置</h3><p>打开主题配置文件，找到 <code>github_banner</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>enable: </code> 是否在右上角提供横幅，默认 <code>false</code> 是不提供，<code>true</code> 是提供<br><code>permalink: </code>设置自己的 GitHub 链接，默认 <code>https://github.com/yourname</code><br><code>title: </code>设置标题，默认 <code>Follow me on GitHub</code> </p>
 </blockquote>
@@ -713,7 +716,7 @@
   <img src="/images/xgt-banner.png" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="字体自定义设置"><a href="#字体自定义设置" class="headerlink" title="字体自定义设置"></a>字体自定义设置</h3><p>打开站点配置文件，找到 <code>font</code>，按照以下说明修改并保存：</p>
+<h3 id="字体自定义设置"><a href="#字体自定义设置" class="headerlink" title="字体自定义设置"></a>字体自定义设置</h3><p>打开主题配置文件，找到 <code>font</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>global: </code> 设置全局字体，整个网站使用的字体。<br><code>title: </code> 设置标题字体，站点标题使用的字体。<br><code>headings</code>  设置标题字体，文章标题使用的字体（h1、h2、h3、h4、h5、h6）。<br><code>pposts : </code>设置文章字体，文章使用的字体。<br><code>codes: </code>设置代码字体，文章中代码块使用的字体。</p>
 </blockquote>
@@ -724,7 +727,7 @@
   <img src="/images/xgt-font.png" style="margin: 0;">
   <br></li>
 </ul>
-<h3 id="本地搜索设置"><a href="#本地搜索设置" class="headerlink" title="本地搜索设置"></a>本地搜索设置</h3><p>打开站点配置文件，找到 <code># Local Search</code>，按照以下说明修改并保存：</p>
+<h3 id="本地搜索设置"><a href="#本地搜索设置" class="headerlink" title="本地搜索设置"></a>本地搜索设置</h3><p>打开主题配置文件，找到 <code># Local Search</code>，按照以下说明修改并保存：</p>
 <blockquote>
 <p><code>enable: </code> 设置是否启用本地搜索功能，默认 <code>false</code> 是不启用，<code>true</code> 是启用</p>
 <blockquote>
@@ -742,6 +745,13 @@
 </ul>
 <h3 id="站点背景设置"><a href="#站点背景设置" class="headerlink" title="站点背景设置"></a>站点背景设置</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32767041/article/details/103284412">教程</a></li>
+</ul>
+<h3 id="Live2d-小部件设置"><a href="#Live2d-小部件设置" class="headerlink" title="Live2d 小部件设置"></a>Live2d 小部件设置</h3><p>在 /blog/source/_data/head.njk 中编辑并添加以下内容（没有文件则新建一个）：<br><strong>示例</strong><br>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure><br>打开站点配置文件，找到 <code># Local Search</code>，按照以下说明修改并保存：</p>
+<ul>
+<li><strong>效果图</strong>  <img src="/images/xgt-search1.png" style="margin: 0;">
+  <br>
+  <img src="/images/xgt-search2.png" style="margin: 0;">
+  <br></li>
 </ul>
 
     </div>
@@ -904,7 +914,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js"><span class="nav-number">1.1.</span> <span class="nav-text">Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.2.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C-Github-%E8%B4%A6%E5%8F%B7"><span class="nav-number">1.2.2.</span> <span class="nav-text">注册 Github 账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BB%93%E5%BA%93"><span class="nav-number">1.2.3.</span> <span class="nav-text">创建博客仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-SSH-Key"><span class="nav-number">1.2.4.</span> <span class="nav-text">配置 SSH Key</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo"><span class="nav-number">1.3.</span> <span class="nav-text">Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="nav-number">2.</span> <span class="nav-text">搭建博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-Hexo"><span class="nav-number">2.1.</span> <span class="nav-text">初始化 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%B5%8F%E8%A7%88%E5%8D%9A%E5%AE%A2"><span class="nav-number">2.2.</span> <span class="nav-text">本地浏览博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0Github%E4%B8%8A"><span class="nav-number">2.3.</span> <span class="nav-text">部署到Github上</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NexT-%E4%B8%BB%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">NexT 主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-NexT"><span class="nav-number">3.1.</span> <span class="nav-text">安装 NexT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-NexT"><span class="nav-number">3.2.</span> <span class="nav-text">配置 NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Site-%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.1.</span> <span class="nav-text">Site 设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BF%BB%E9%A1%B5%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.2.</span> <span class="nav-text">翻页设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%AB%99logo%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.3.</span> <span class="nav-text">网站logo设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E8%84%9A%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.4.</span> <span class="nav-text">页脚设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%9D%83%E6%89%80%E6%9C%89%E8%80%85%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.5.</span> <span class="nav-text">版权所有者设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme-%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.6.</span> <span class="nav-text">Scheme 设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95%E6%A0%8F%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.7.</span> <span class="nav-text">菜单栏设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.8.</span> <span class="nav-text">侧边栏设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B4%E5%83%8F%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.9.</span> <span class="nav-text">头像设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%AB%99%E7%82%B9%E7%8A%B6%E6%80%81%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.10.</span> <span class="nav-text">侧边栏站点状态设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BE%E4%BA%A4%E9%93%BE%E6%8E%A5%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.11.</span> <span class="nav-text">社交链接设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.12.</span> <span class="nav-text">友情链接设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.13.</span> <span class="nav-text">文章目录设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%8F%E8%A8%80%E6%96%87%E6%9C%AC%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.14.</span> <span class="nav-text">序言文本设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E8%B5%8F%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.15.</span> <span class="nav-text">打赏设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%8F%91%E5%B8%83%E6%B8%A0%E9%81%93%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.16.</span> <span class="nav-text">其他发布渠道设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.17.</span> <span class="nav-text">代码块设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.18.</span> <span class="nav-text">回到顶部设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%85%E8%AF%BB%E8%BF%9B%E5%BA%A6%E6%9D%A1%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.19.</span> <span class="nav-text">阅读进度条设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A6%E7%AD%BE%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.20.</span> <span class="nav-text">书签设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%AA%E5%B9%85%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.21.</span> <span class="nav-text">横幅设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.22.</span> <span class="nav-text">字体自定义设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.23.</span> <span class="nav-text">本地搜索设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%99%E7%82%B9%E8%83%8C%E6%99%AF%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.24.</span> <span class="nav-text">站点背景设置</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js"><span class="nav-number">1.1.</span> <span class="nav-text">Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.2.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C-Github-%E8%B4%A6%E5%8F%B7"><span class="nav-number">1.2.2.</span> <span class="nav-text">注册 Github 账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BB%93%E5%BA%93"><span class="nav-number">1.2.3.</span> <span class="nav-text">创建博客仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-SSH-Key"><span class="nav-number">1.2.4.</span> <span class="nav-text">配置 SSH Key</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo"><span class="nav-number">1.3.</span> <span class="nav-text">Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="nav-number">2.</span> <span class="nav-text">搭建博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-Hexo"><span class="nav-number">2.1.</span> <span class="nav-text">初始化 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%B5%8F%E8%A7%88%E5%8D%9A%E5%AE%A2"><span class="nav-number">2.2.</span> <span class="nav-text">本地浏览博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0Github%E4%B8%8A"><span class="nav-number">2.3.</span> <span class="nav-text">部署到Github上</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NexT-%E4%B8%BB%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">NexT 主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-NexT"><span class="nav-number">3.1.</span> <span class="nav-text">安装 NexT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-NexT"><span class="nav-number">3.2.</span> <span class="nav-text">配置 NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Site-%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.1.</span> <span class="nav-text">Site 设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BF%BB%E9%A1%B5%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.2.</span> <span class="nav-text">翻页设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%AB%99logo%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.3.</span> <span class="nav-text">网站logo设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E8%84%9A%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.4.</span> <span class="nav-text">页脚设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%9D%83%E6%89%80%E6%9C%89%E8%80%85%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.5.</span> <span class="nav-text">版权所有者设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme-%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.6.</span> <span class="nav-text">Scheme 设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95%E6%A0%8F%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.7.</span> <span class="nav-text">菜单栏设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.8.</span> <span class="nav-text">侧边栏设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B4%E5%83%8F%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.9.</span> <span class="nav-text">头像设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%AB%99%E7%82%B9%E7%8A%B6%E6%80%81%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.10.</span> <span class="nav-text">侧边栏站点状态设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BE%E4%BA%A4%E9%93%BE%E6%8E%A5%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.11.</span> <span class="nav-text">社交链接设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.12.</span> <span class="nav-text">友情链接设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.13.</span> <span class="nav-text">文章目录设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%8F%E8%A8%80%E6%96%87%E6%9C%AC%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.14.</span> <span class="nav-text">序言文本设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E8%B5%8F%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.15.</span> <span class="nav-text">打赏设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%8F%91%E5%B8%83%E6%B8%A0%E9%81%93%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.16.</span> <span class="nav-text">其他发布渠道设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.17.</span> <span class="nav-text">代码块设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.18.</span> <span class="nav-text">回到顶部设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%85%E8%AF%BB%E8%BF%9B%E5%BA%A6%E6%9D%A1%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.19.</span> <span class="nav-text">阅读进度条设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A6%E7%AD%BE%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.20.</span> <span class="nav-text">书签设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%AA%E5%B9%85%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.21.</span> <span class="nav-text">横幅设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.22.</span> <span class="nav-text">字体自定义设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.23.</span> <span class="nav-text">本地搜索设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%99%E7%82%B9%E8%83%8C%E6%99%AF%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.24.</span> <span class="nav-text">站点背景设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Live2d-%E5%B0%8F%E9%83%A8%E4%BB%B6%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.25.</span> <span class="nav-text">Live2d 小部件设置</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -913,7 +923,7 @@
     <img class="site-author-image" itemprop="image" alt="了了"
       src="/images/Kitty%201.ico">
   <p class="site-author-name" itemprop="name">了了</p>
-  <div class="site-description" itemprop="description">我们可以慢慢向前走，但绝对不能后退。</div>
+  <div class="site-description" itemprop="description">拽而有礼，拽而不狂</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -958,7 +968,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://xiaolidai.github.io/xiaoli.github.io/" title="https:&#x2F;&#x2F;xiaolidai.github.io&#x2F;xiaoli.github.io&#x2F;" rel="noopener" target="_blank">黛黛大美女</a>
+          <a href="https://xiaolidai.github.io/" title="https:&#x2F;&#x2F;xiaolidai.github.io&#x2F;" rel="noopener" target="_blank">黛黛大美女</a>
         </li>
         <li class="links-of-blogroll-item">
           <a href="https://liuruling.github.io/" title="https:&#x2F;&#x2F;liuruling.github.io&#x2F;" rel="noopener" target="_blank">小刘</a>
@@ -995,13 +1005,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">10k</span>
+    <span title="站点总字数">11k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">9 分钟</span>
+    <span title="站点阅读时长">10 分钟</span>
 </div>
 
         
