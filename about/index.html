@@ -26,7 +26,7 @@
 <meta property="og:description" content="拽而有礼，拽而不狂">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-02T01:29:19.000Z">
-<meta property="article:modified_time" content="2021-09-02T01:29:55.867Z">
+<meta property="article:modified_time" content="2021-09-02T04:08:18.149Z">
 <meta property="article:author" content="了了">
 <meta property="article:tag" content="lyf">
 <meta name="twitter:card" content="summary">
@@ -237,7 +237,6 @@
 
           </div>
           
-    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -367,22 +366,7 @@
       </div>
     </main>
 
-<div id="gitalk-container"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script>
-const gitalk = new Gitalk({
-  clientID: 'f3b7abeea403bbdde91c',
-  clientSecret: '075d9443b7fa717bb646d04e75c0f7faff887c0b',
-  repo: 'pl',      // The repository of store comments,
-  owner: 'lyfdnrjbrs',
-  admin: ['lyfdnrjbrs'],
-  id: tags,      // Ensure uniqueness and length less than 50
-  distractionFreeMode: false  // Facebook-like distraction free mode
-})
 
-gitalk.render('gitalk-container')
-</script>
 
     <footer class="footer">
       <div class="footer-inner">
@@ -469,25 +453,6 @@ gitalk.render('gitalk-container')
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : 'f3b7abeea403bbdde91c',
-      clientSecret: '075d9443b7fa717bb646d04e75c0f7faff887c0b',
-      repo        : 'lyfdnrjbrs.github.io',
-      owner       : 'lyfdnrjbrs',
-      admin       : ['lyfdnrjbrs'],
-      id          : '3be7aa98d992907175cbd79c194399f2',
-        language: 'zh-CN',
-      distractionFreeMode: false
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-});
-</script>
 
 </body>
 </html>
